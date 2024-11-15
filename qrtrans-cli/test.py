@@ -1,15 +1,18 @@
 from fastapi import FastAPI
 import random
+from fastapi.responses import StreamingResponse
 
 import encoder
 
 app = FastAPI()
 
-file = 'test.py'
+file = 'test.txt'
 
 lteconder = encoder.LTEncoder(32, file)
     ## Processing File:
 f = open(file).read()
+
+filestream_generator = lteconder._gen_blocks(f)
 
 
 # TODO: File selector
@@ -20,8 +23,7 @@ async def root(filepath: str):
 
 # TODO: This part should be integrated with LT-code
 
-@app.get("/file/{segment}")
-async def get_file_segment(segment: str):
-    for block in lteconder._gen_blocks("This is something    iajsodiahsd oaishdo iahsodiaosidh oas odaihsdo iahsod  iaosidh  oiahsodi !sdas asdasd"):
-        return block
+@app.get("/file/")
+async def get_file_segment():
+    return next(filestream_generator)
 

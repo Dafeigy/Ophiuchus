@@ -3,7 +3,7 @@ from random import randint
 from struct import pack
 import time
 from typing import Union
-
+import json
 from io import BufferedReader
 
 import sampler
@@ -59,12 +59,12 @@ class LTEncoder():
             # Generate blocks of XORed data in network byte order
             block = (filesize, self.blocksize, blockseed, len(self.file_name.encode()), self.file_name.encode(), int.to_bytes(block_data, self.blocksize, sys.byteorder))
             # yield pack(f'!IIII{len(self.file_name.encode())}s{self.blocksize}s', *block)
-            yield {
+            yield json.dumps({
                 'filesize':filesize,
                 'self.blocksize': self.blocksize,
                 'blockseed': blockseed,
-                'data': int.to_bytes(block_data, self.blocksize, sys.byteorder)
-            }
+                'data': int.to_bytes(block_data, self.blocksize, sys.byteorder).decode()
+            })
 
 if __name__ == "__main__":
     lteconder = LTEncoder(32)
