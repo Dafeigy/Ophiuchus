@@ -68,7 +68,7 @@ class LTEncoder():
             block = (filesize, self.blocksize, blockseed, len(self.file_name.encode()), self.file_name.encode(), int.to_bytes(block_data, self.blocksize, sys.byteorder))
             qr.add_data(int.to_bytes(block_data, self.blocksize, sys.byteorder).decode())
             qr_matrix = qr.get_matrix()
-            matrix = [["█" if each else "  " for each in rows] for rows in qr_matrix]
+            matrix = [["■" if each else "□" for each in rows] for rows in qr_matrix]
             final_str = []
             for row in matrix:
                 final_str .append("".join(row)) 
