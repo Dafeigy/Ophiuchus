@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NR Fall Detection Demo System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/demo.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-1.11.1.min.js')}}"> </script>
+    <script src="https://kit.fontawesome.com/7a267f8cdb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">SONY NR-Fall Detection System</div>
+    <div id="content">
+        <div id="container">
+            <div id="top">
+                <div id="line"></div>
+            </div>
+            <div id="bottom">
+                <div id="power"></div>
+                <div id="noise"></div>
+            </div>
+        </div>
+        <div id="warning">
+            <div id="room">
+                DEBUG MODE 
+            </div>
+            <div id="time"></div>
+            <div id="decoration_bar"></div>
+                
+            <div id="siren_div">
+                <img src="{{ url_for('static', filename = 'img/Siren.png')}}" id="siren" alt="">
+            </div>
+
+            <div id="Debug-window">
+                3.14159
+            </div>
+            <div id="control_pannel">
+                <div>
+                    <button id="call_phone"> 
+                        <img src="{{ url_for('static', filename = 'img/call.png')}}" id="call">
+                        <div>Emergency Contact</div>
+                    </button>
+                </div>
+                <div>
+                    <button id="open_camera">
+                        <img src="{{ url_for('static', filename = 'img/camera.png')}}" id="camera">
+                        <div>Open camera</div>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="loader">
+
+    </div>
+
+    <script src="{{ url_for('static', filename = 'js/echarts.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/demo_.js') }}"></script>
+
+</body>
+</html>

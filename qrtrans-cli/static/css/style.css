@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #333;
+}
+#container{
+    display: flex;
+    float: left;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    justify-items: center;
+}
+
+#left{
+    display: flex;
+    align-self: center;
+    width: 48vw;
+    height: 80vh;
+    /* background-color: #3e54D3; */
+    margin: 1vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#trans{
+    color: #797979;
+    font-size: 24px;
+    letter-spacing: .2rem;
+    display: flex;
+    margin-top: 2vw;
+    width: 25vw;
+    height: 25vw;
+    background-color: #444;
+    align-items: center;
+    border-radius: 15px;
+    /* text-align: center; */
+    justify-content: center;
+    float: top;
+}
+#upload{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: larger;
+    color: #797979;
+    transition: all .2s linear;
+    border-radius: 15px;
+}
+
+#control-pannel{
+    margin-top: 2vw;
+    display: flex;
+    /* background-color: #444; */
+    width: 25vw;
+    height: 2vw;
+    justify-content: center;
+    align-items: center;
+    /* border: none; */
+    border: #3a809a 2px solid;
+    border-radius: 20px;
+}
+#control-pannel button{
+    /* margin: auto; */
+    opacity: .8;
+    justify-content: center;
+    align-items: center;
+    background-color: #494b4b;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    border: 4px solid #343434;
+    font-size: 16px;
+    color: #afafaf;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+#file-select{
+    border-radius: 20px 0  0 20px;
+    /* color: #555; */
+}
+#streaming{
+    border-radius: 0 20px 20px 0;
+}
+#right{
+    display: flex;
+    align-self: center;
+    align-items:center;
+    justify-content: center;
+    width: 48vw;
+    /* height: 80vh; */
+    /* background-color: #343434; */
+    /* border: solid 5px #888; */
+    /* border-radius: 20px; */
+    text-align: center;
+    margin: 1vw;
+    letter-spacing: .2rem;
+}
+
+#TODO{
+    font-size: 60px;
+    text-align: center;
+    align-self: center;
+    color: #555;
+}
+
+
+
+#streaming:hover, #file-select:hover{
+    background-color: #3a809a;
+    color: #fff;
+}
+
+#upload:hover{
+    background-color: #8ea5ad;
+    opacity: .5;
+    color: #343434;
+}

@@ -14,14 +14,16 @@ data_source = "hello woroksdja osiu ahsdiuahsoiduhaksj basidhal hjklasdhklja jkl
 lteconder = encoder.LTEncoder(32, data_source)
 data_stream_generator = lteconder._gen_blocks(data_source)
 
-@app.route("/")
+@app.route("/data")
 def update_qrcode():
     
     # temp = next(lteconder._gen_blocks("hello woroksdja osiu ahsdiuahsoiduhaksj basidhal hjklasdhklja jklh"))
     # return json.loads(temp)
     return next(data_stream_generator)
 
-
+@app.route("/")
+def main():
+    return 
 
 if __name__ == '__main__':
     app.run()

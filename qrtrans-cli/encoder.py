@@ -7,6 +7,14 @@ import json
 from io import BufferedReader
 
 import sampler
+import qrcode
+
+qr = qrcode.QRCode(
+    version=3,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    box_size=1,
+    border=0,
+)
 
 
 class LTEncoder():
@@ -58,13 +66,20 @@ class LTEncoder():
             # print(f"{ix_samples}")
             # Generate blocks of XORed data in network byte order
             block = (filesize, self.blocksize, blockseed, len(self.file_name.encode()), self.file_name.encode(), int.to_bytes(block_data, self.blocksize, sys.byteorder))
+            qr.add_data(int.to_bytes(block_data, self.blocksize, sys.byteorder).decode())
+            qr_matrix = qr.get_matrix()
+            matrix = [["█" if each else "  " for each in rows] for rows in qr_matrix]
+            final_str = []
+            for row in matrix:
+                final_str .append("".join(row)) 
+            qr.clear()
             # yield pack(f'!IIII{len(self.file_name.encode())}s{self.blocksize}s', *block)
-            yield json.dumps({
+            yield {
                 'filesize':filesize,
                 'self.blocksize': self.blocksize,
                 'blockseed': blockseed,
-                'data': int.to_bytes(block_data, self.blocksize, sys.byteorder).decode()
-            })
+                'data': final_str
+            }
 
 if __name__ == "__main__":
     lteconder = LTEncoder(32)
