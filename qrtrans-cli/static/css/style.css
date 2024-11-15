@@ -1,6 +1,12 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('/static/fonts/DepartureMono-Regular.woff2') format('truetype');
+}
+
 * {
     padding: 0;
     margin: 0;
+    font-family: "CustomFont";
 }
 
 body{
@@ -29,7 +35,7 @@ body{
 }
 
 #trans{
-    color: #797979;
+    color: #b1b1b1;
     font-size: 24px;
     letter-spacing: .2rem;
     display: flex;
@@ -38,10 +44,12 @@ body{
     height: 25vw;
     background-color: #444;
     /* align-items: center; */
-    border-radius: 15px;
+    border-radius: 1vw;
+    
     /* text-align: center; */
     justify-content: center;
     flex-direction: column;
+    transition: all .3s linear;
     /* font-family: "Consolas", monospace */
 }
 
@@ -49,11 +57,13 @@ body{
     display: flex;
     /* align-items: center; */
     justify-content: center;
-    font-size: calc(0.6vw);
+    
+    font-size: calc(0.3vw);
     font-family: "Consolas", monospace;
     margin: 0;
     /* padding: 1px; */
-    letter-spacing: calc(0.36vw);
+    letter-spacing: calc(0.18vw);
+    user-select: none;
     /* word-spacing: 2px; */
 }
 #upload{
@@ -69,7 +79,7 @@ body{
 }
 
 #control-pannel{
-    margin-top: 2vw;
+    margin-top: 1vw;
     display: flex;
     /* background-color: #444; */
     width: 25vw;
@@ -77,8 +87,8 @@ body{
     justify-content: center;
     align-items: center;
     /* border: none; */
-    border: #3a809a 2px solid;
-    border-radius: 20px;
+    /* border: #3a9a78 .05vw solid; */
+    border-radius: 0.5vw;
 }
 #control-pannel button{
     /* margin: auto; */
@@ -91,7 +101,7 @@ body{
     text-align: center;
     display: flex;
     border: 4px solid #343434;
-    font-size: 16px;
+    font-size: calc(.64vw);
     color: #afafaf;
     cursor: pointer;
     transition: all .3s linear;
@@ -108,7 +118,8 @@ body{
     align-self: center;
     align-items:center;
     justify-content: center;
-    width: 48vw;
+    width: 30vw;
+    height: 80vh;
     /* height: 80vh; */
     /* background-color: #343434; */
     /* border: solid 5px #888; */
@@ -119,16 +130,20 @@ body{
 }
 
 #TODO{
-    font-size: 60px;
-    text-align: center;
-    align-self: center;
-    color: #555;
+    /* width: 25vw; */
+    height: 25vw;
+    margin-top: 2vw;
+    font-size: calc(2.5vw);
+    text-align: left;
+    color: #959595;
+    font-family: "CustomFont";
 }
 
 
 
+
 #streaming:hover, #file-select:hover{
-    background-color: #3a809a;
+    background-color: #3a9a78;
     color: #fff;
 }
 
@@ -136,4 +151,90 @@ body{
     background-color: #8ea5ad;
     opacity: .5;
     color: #343434;
+}
+
+li{
+    font-size: .8vw;
+    letter-spacing: 0;
+    text-align: left;
+    margin-top: .5vw;
+    color: #797979;
+    List-style-type :none
+}
+
+a {
+    text-decoration: none;
+    color: #3a9a78;
+}
+
+a::after{
+    text-decoration: none;
+    color: #3a9a78;
+}
+
+ul{
+    margin-top: 2vw;
+}
+
+#notification{
+
+    font-size: 1vw;
+}
+
+#commercial{
+    text-align: center;
+    /* width: 25vw; */
+    font-size: .4vw;
+    color: #a1a1a1;
+    margin-top: 1vw;
+    align-content: center;
+    height: 6vw;
+    /* background-color: #5c5c5c; */
+}
+
+#avatar{
+    margin-top: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: left;
+    flex-direction: row;
+    float: left;
+}
+#avatar{
+    font-size: .8vw;
+    /* background: #949494; */
+    opacity: 0.6;
+    /* color: #fff; */
+}
+img{
+    align-content: center;
+    height: 1.5vw;
+    margin: .2vw;
+    opacity: .4;
+    transition: all .2s linear;
+}
+
+img:hover{
+    opacity: 1;
+    scale: 1.1;
+}
+#trans:hover{
+    border: .05vw solid #3a9a78;
+    background-color: #98d5bf;
+    opacity: .6;
+    color: #3e3e3e;
+}
+
+#blocks{
+    width: 25vw;
+    height: 3vw;
+    background-color: #494b4b;
+    /* opacity: ; */
+    margin-top: 1vw;
+    font-size: calc(.7vw);
+    border-radius: .5vw;
+    text-align: center;
+    color: #afafaf;
+    align-content: center;
 }

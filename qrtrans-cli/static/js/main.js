@@ -22,4 +22,4 @@ function allInOne(){
     })
 }
 
-setInterval(allInOne, 500)
+setInterval(allInOne, 20)
