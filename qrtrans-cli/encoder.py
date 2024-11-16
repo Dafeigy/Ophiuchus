@@ -5,9 +5,10 @@ import time
 from typing import Union
 import json
 from io import BufferedReader
-
+import chardet
 import sampler
 import qrcode
+import base64
 
 qr = qrcode.QRCode(
     version=5,
@@ -21,26 +22,22 @@ class LTEncoder():
     def __init__(self, blocksize:int, file_name:str) -> None:
         self.blocksize = blocksize
         self.file_name = file_name
-        pass
+        with open(file_name,'rb') as f:
+            self.f_bytes = base64.b64encode(f.read())
 
-    def _split_file(self, source:Union[BufferedReader,str]):
+
+    def _split_file(self):
         """
         Block file byte contents into blocksize chunks, padding last one if necessary
         """
         # TODO: Maybe f can be str or File Instance?
-        if isinstance(source, BufferedReader):
-            f_bytes = f.read()
-        elif isinstance(source, str):
-            f_bytes = str.encode(source)
-        else:
-            raise TypeError("Only BufferedReader or str supported.")
+        f_bytes = self.f_bytes
     
-        # print(type(f_bytes),type(f))
         blocks = [int.from_bytes(f_bytes[i:i+self.blocksize].ljust(self.blocksize, b'0'), sys.byteorder) 
                 for i in range(0, len(f_bytes), self.blocksize)]
         return len(f_bytes), blocks
 
-    def _gen_blocks(self, source, seed=None, c=sampler.DEFAULT_C, delta=sampler.DEFAULT_DELTA):
+    def _gen_blocks(self, seed=None, c=sampler.DEFAULT_C, delta=sampler.DEFAULT_DELTA):
         """Generates an infinite sequence of blocks to transmit
         to the receiver
         """
@@ -49,7 +46,7 @@ class LTEncoder():
         if seed is None:
             seed = randint(0, 1 << 31 - 1)
         # get file blocks
-        filesize, blocks = self._split_file(source)
+        filesize, blocks = self._split_file()
 
         # init stream vars
         K = len(blocks)
@@ -62,13 +59,12 @@ class LTEncoder():
             block_data = 0
             for ix in ix_samples:
                 block_data ^= blocks[ix]
-            # print(f"d: {d}")
-            # print(f"{ix_samples}")
+
             # Generate blocks of XORed data in network byte order
             block = (filesize, self.blocksize, blockseed, len(self.file_name.encode()), self.file_name.encode(), int.to_bytes(block_data, self.blocksize, sys.byteorder))
             qr.add_data(int.to_bytes(block_data, self.blocksize, sys.byteorder).decode())
             qr_matrix = qr.get_matrix()
-            matrix = [["■" if each else "□" for each in rows] for rows in qr_matrix]
+            matrix = [["██" if each else "  " for each in rows] for rows in qr_matrix]
             final_str = []
             for row in matrix:
                 final_str .append("".join(row)) 

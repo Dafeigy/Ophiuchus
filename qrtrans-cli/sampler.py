@@ -41,7 +41,7 @@ def gen_mu(K, delta, c):
     """The Robust Soliton Distribution on the degree of 
     transmitted blocks
     """
-
+    print(K,delta)
     S = c * log(K/delta) * sqrt(K) 
     tau = gen_tau(S, K, delta)
     rho = gen_rho(K)

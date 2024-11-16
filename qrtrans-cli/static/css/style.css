@@ -6,12 +6,12 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: "CustomFont";
 }
 
 body{
     background-color: #333;
-    font-family: "Consolas", monospace
+    /* font-family: "Consolas", monospace */
+    font-family: "CustomFont";
 }
 #container{
     display: flex;
@@ -43,28 +43,30 @@ body{
     width: 25vw;
     height: 25vw;
     background-color: #444;
-    /* align-items: center; */
+    align-items: center;
     border-radius: 1vw;
     
     /* text-align: center; */
     justify-content: center;
     flex-direction: column;
-    transition: all .3s linear;
+    transition: all .2s linear;
     /* font-family: "Consolas", monospace */
+    font-family: sans-serif;
 }
 
-#trans div{
+
+
+pre{
     display: flex;
-    /* align-items: center; */
     justify-content: center;
-    
-    font-size: calc(0.3vw);
-    font-family: "Consolas", monospace;
+    margin: .5vw;
+    font-size: 0.4rem;
+    font-family: "Consolas";
     margin: 0;
-    /* padding: 1px; */
-    letter-spacing: calc(0.18vw);
+    letter-spacing: 0.02rem;
     user-select: none;
-    /* word-spacing: 2px; */
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
 }
 #upload{
     width: 100%;
@@ -79,7 +81,7 @@ body{
 }
 
 #control-pannel{
-    margin-top: 1vw;
+    margin-top: .5vw;
     display: flex;
     /* background-color: #444; */
     width: 25vw;
@@ -110,7 +112,7 @@ label{
     font-size: calc(.64vw);
     color: #afafaf;
     cursor: pointer;
-    transition: all .3s linear;
+    transition: all .2s linear;
     float: left;
 }
 .file-button{
@@ -234,15 +236,31 @@ img:hover{
     color: #3e3e3e;
 }
 
-#blocks{
+#status{
     width: 25vw;
     height: 3vw;
     background-color: #494b4b;
     /* opacity: ; */
-    margin-top: 1vw;
-    font-size: calc(.7vw);
+    margin-top: .5vw;
+    font-size: calc(.6vw);
     border-radius: .5vw;
     text-align: center;
     color: #afafaf;
     align-content: center;
+}
+
+
+.red{
+    color: #db634a;
+}
+
+.red:hover{
+    background-color: #db634a;
+    color: #fff;
+}
+
+.green{
+    color: #fff;
+    background-color: #3a9a78;
+    padding: 0 .2vw 0 .2vw;
 }
