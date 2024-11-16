@@ -19,14 +19,22 @@
             <div id="blocks">
                 [TODO] show which blocks are being sent
             </div>
+            
             <div id="control-pannel">
-                <button id="file-select">
+                <form action = "/uploader" method = "POST" enctype = "multipart/form-data">
+                    <input type = "file" name = "file-select" id = "file-select"/>
+                    <label for="file-select" class="file-button">Select File</label>
+                    <input type = "submit" id = "streaming" name="streaming"/>
+                    <label for="streaming" class="submit-button">Upload</button>
+                </form>
+                <!-- <button id="file-select">
                      Select
                 </button>
                 <button id="streaming">
                      Streaming
-                </button>
+                </button> -->
             </div>
+            
             
         </div>
         <div id="right">

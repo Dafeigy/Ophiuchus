@@ -10,7 +10,7 @@ import sampler
 import qrcode
 
 qr = qrcode.QRCode(
-    version=11,
+    version=5,
     error_correction=qrcode.constants.ERROR_CORRECT_L,
     box_size=1,
     border=0,
