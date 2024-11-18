@@ -5,7 +5,6 @@ import time
 from typing import Union
 import json
 from io import BufferedReader
-import chardet
 import sampler
 import qrcode
 import base64

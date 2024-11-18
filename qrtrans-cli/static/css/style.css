@@ -268,3 +268,8 @@ img:hover{
 #welcome-page{
     font-size: .6vw;
 }
+
+li::selection{
+    background-color: #3a9a78;
+    color: #fff;
+}
