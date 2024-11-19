@@ -11,7 +11,8 @@ function displayTransData(responseData){
 function displayData(responseData) {
     var transDiv = $('#trans');
     transDiv.empty(); // 清空 div 内容
-
+    len = responseData.data[0].length;
+    document.getElementById('trans').style.fontSize = 100/len + 'vw'
     // 遍历 data 字段中的每个元素，并按行添加到 div 中
     $.each(responseData.data, function(index, line) {
         transDiv.append('<pre>' + line + '</pre>');
@@ -33,7 +34,7 @@ function updateQRcode(){
     }
 }
 
-setInterval(updateQRcode, 500)
+setInterval(updateQRcode, 1000)
 
 $(document).ready(function() {
     $('#file-select').on('change', function() {

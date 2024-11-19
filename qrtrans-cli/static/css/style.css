@@ -40,8 +40,8 @@ body{
     letter-spacing: .2rem;
     display: flex;
     margin-top: 2vw;
-    width: 25vw;
-    height: 25vw;
+    width: 50vh;
+    height: 50vh;
     background-color: #444;
     align-items: center;
     border-radius: 1vw;
@@ -58,12 +58,12 @@ body{
 
 pre{
     display: flex;
+    width: 50vh;
     justify-content: center;
-    margin: .5vw;
-    font-size: 0.4rem;
-    font-family: "Consolas";
     margin: 0;
-    letter-spacing: 0.02rem;
+    font-size: 0.4em;
+    font-family: "Consolas";
+    letter-spacing: 0.02em;
     user-select: none;
 }
 

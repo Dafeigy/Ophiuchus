@@ -74,6 +74,8 @@ class LTEncoder():
                 'self.blocksize': self.blocksize,
                 'blockseed': blockseed,
                 'data': final_str,
+                'd': d,
+                'ix_samples':list(ix_samples)
             }
 
 if __name__ == "__main__":
