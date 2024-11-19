@@ -45,7 +45,7 @@ body{
     background-color: #444;
     align-items: center;
     border-radius: 1vw;
-    
+    border: .2vw solid #444;
     /* text-align: center; */
     justify-content: center;
     flex-direction: column;
@@ -230,8 +230,9 @@ img:hover{
     scale: 1.1;
 }
 #trans:hover{
-    border: .05vw solid #3a9a78;
-    background-color: #98d5bf;
+    border: .2vw solid #3a9a78;
+    background-color: #ffffff;
+    /* margin: .5vw; */
     opacity: .6;
     color: #3e3e3e;
 }
@@ -274,7 +275,7 @@ img:hover{
     font-size: .6vw;
 }
 
-li::selection{
+*::selection{
     background-color: #3a9a78;
     color: #fff;
 }
