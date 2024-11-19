@@ -3,6 +3,11 @@
 streamingReadyFlag = false
 isStreamFlag = false
 
+function displayTransData(responseData){
+    var progressbar = $("#progressbar")
+    progressbar.empty()
+}
+
 function displayData(responseData) {
     var transDiv = $('#trans');
     transDiv.empty(); // 清空 div 内容
@@ -28,7 +33,7 @@ function updateQRcode(){
     }
 }
 
-setInterval(updateQRcode, 40)
+setInterval(updateQRcode, 500)
 
 $(document).ready(function() {
     $('#file-select').on('change', function() {
@@ -44,13 +49,26 @@ $(document).ready(function() {
         $.ajax({
             url: '/upload',
             type: 'POST',
+            async: true,
             data: formData,
             processData: false,
             contentType: false,
+            beforeSend:function(){
+                document.getElementById('upload-button').style.pointerEvents = 'none'
+                document.getElementById('streaming-button').style.pointerEvents = 'none'
+                document.getElementById('loader').style.display = 'flex'
+                document.getElementById('status').style.display = 'none'
+            },
             success: function(response) {
-                console.log(file)
+                console.log(file);
+                if (file.name.length > 10){
+                    filename = "..."+file.name.slice(-7)
+                }
+                else{
+                    filename = file.name
+                }
                 $('#status').html(
-                    `File: <span class="green">${file.name}</span> Size: <span class="green">${file.size}</span> Bytes. ↓ Click <span class="green">[Stream!)</span> Button!`
+                    `File: <span class="green">${filename}</span> Size: <span class="green">${file.size}</span> Bytes. ↓ Click <span class="green">[Stream!)</span> Button!`
                 );
                 if (file.size != 0){
                     streamingReadyFlag = true
@@ -65,11 +83,17 @@ $(document).ready(function() {
                     );
                     alert("Empty File. Re-select!")
                 }
-                
             },
             error: function() {
                 // $('#status').html('Error uploading file');
                 alert(`File: ${file.name} Size: ${file.size} Bytes uploaded Failed!`)
+            },
+            complete: function(){
+                document.getElementById('upload-button').style.pointerEvents = 'auto'
+                document.getElementById('streaming-button').style.pointerEvents = 'auto'
+                
+                document.getElementById('status').style.display = 'flex'
+                document.getElementById('loader').style.display = 'none'
             }
         });
     });

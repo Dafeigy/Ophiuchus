@@ -237,14 +237,19 @@ img:hover{
 }
 
 #status{
+    display: flex;
     width: 25vw;
     height: 3vw;
     background-color: #494b4b;
     /* opacity: ; */
+    z-index: 2;
+    position:relative;
     margin-top: .5vw;
     font-size: calc(.6vw);
     border-radius: .5vw;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* text-align: center; */
     color: #afafaf;
     align-content: center;
 }
@@ -272,4 +277,68 @@ img:hover{
 li::selection{
     background-color: #3a9a78;
     color: #fff;
+}
+
+#loader{
+    width: 25vw;
+    height: 3vw;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    /* margin-top: 20px; */
+    margin-top: .5vw;
+
+}
+#loader span{
+    width: 0.5vw;
+    height: 2.5vh;
+    margin: 0 13px;
+    background-color: #fff;
+    animation: animate 1.4s linear infinite;
+
+}
+#loader span:nth-child(1){
+    animation-delay: 0s;
+}
+#loader span:nth-child(2){
+    animation-delay: 0.2s;
+}
+#loader span:nth-child(3){
+    animation-delay: 0.4s;
+}
+#loader span:nth-child(4){
+    animation-delay: 0.6s;
+}
+#loader span:nth-child(5){
+    animation-delay: 0.8s;
+}
+#loader span:nth-child(6){
+    animation-delay: 1.0s;
+}
+#loader span:nth-child(7){
+    animation-delay: 1.2s;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transform: translateX(-50px) scale(1);
+    }
+
+    50%
+    {
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        opacity: 1;
+        transform: translateX(0px ) scale(1.2);
+    }
+
+    100%
+    {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transform: translateX(50px) scale(1);
+    }
 }

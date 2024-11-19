@@ -28,7 +28,7 @@ def upload_file():
         return jsonify({'error': 'No selected file'}), 400
     if file:
         filename = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-        file.save(filename)
+        file.save(filename, buffer_size=266144)
         lteconder = encoder.LTEncoder(32, filename)
         data_stream_generator = lteconder._gen_blocks()
         return jsonify({'success': 'File uploaded successfully'}), 200

@@ -73,7 +73,7 @@ class LTEncoder():
                 'filesize':filesize,
                 'self.blocksize': self.blocksize,
                 'blockseed': blockseed,
-                'data': final_str
+                'data': final_str,
             }
 
 if __name__ == "__main__":
