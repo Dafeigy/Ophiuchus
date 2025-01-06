@@ -4,6 +4,7 @@ import os
 import encoder
 import sampler
 import json
+
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './upload'  # 设置上传文件夹的保存路径
 
@@ -38,5 +39,5 @@ app.run(debug = True)
 
 
 if __name__ == '__main__':
-    app.run("127.0.0.1",5000, debug=True)
+    app.run("0.0.0.0",3000)
 

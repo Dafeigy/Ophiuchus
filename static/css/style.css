@@ -10,7 +10,6 @@
 
 body{
     background-color: #333;
-    /* font-family: "Consolas", monospace */
     font-family: "CustomFont";
 }
 @media screen and (orientation: landscape) {
@@ -58,7 +57,7 @@ body{
         justify-content: center;
         margin: 0;
         font-size: 0.4em;
-        font-family: "Consolas";
+        font-family: "Consolas",monospace;
         letter-spacing: 0.02em;
         user-select: none;
     }
@@ -153,7 +152,7 @@ body{
     }
     
     li{
-        font-size: .8vw;
+        font-size: .2vw;
         letter-spacing: 0;
         text-align: left;
         margin-top: .5vw;
@@ -374,7 +373,7 @@ body{
         align-items: center;
         margin: 0;
         font-size: calc(0.6vh + 0.2vw);
-        font-family: "Consolas";
+        font-family: "Consolas",monospace;
         letter-spacing: 0;
         user-select: none;
     }
@@ -463,6 +462,11 @@ body{
     }
     
     #TODO{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: left; */
+        align-items: center;
+        /* align-self: center; */
         height: 60vw;
         margin-top: 5vw;
         font-size: calc(4vh);
@@ -472,7 +476,12 @@ body{
         margin-top: 8vh;
         font-size: 1vh;
     }
-    
+    ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+    }
     li{
         font-size: 1.5vh;
         margin-top: 2vw;
@@ -491,7 +500,7 @@ body{
     #avatar{
         display: flex;
         font-size: 1vh;
-        margin-top: 5vh;
+        margin-top: 15vh;
         justify-content: center;
         align-items: center;
         align-content: left;
