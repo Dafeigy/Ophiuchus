@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Ohpiuchus</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.js')}}"> </script>
+    <script src="https://kit.fontawesome.com/7a267f8cdb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="main">
+            <div id="trans">
+                <pre>
+██████████████    ██████  ██    ██  ████████  ██    ██████████████
+██          ██  ██████  ██████████        ████  ██  ██          ██
+██  ██████  ██    ██          ██      ██  ██  ██    ██  ██████  ██
+██  ██████  ██  ██  ██    ████    ██    ██    ████  ██  ██████  ██
+██  ██████  ██        ██        ██  ████████  ██    ██  ██████  ██
+██          ██  ██  ██    ████████  ██    ██        ██          ██
+██████████████  ██  ██  ██  ██  ██  ██  ██  ██  ██  ██████████████
+                  ████      ██          ████    ██
+██████████  ██████  ██    ██      ██    ██  ██  ████  ██  ██  ██
+██  ██        ██      ██        ████████████████    ██          ██
+  ██  ████  ██████  ██  ██    ████      ██████  ██████    ██  ██
+      ██  ██  ██████  ████            ██  ██    ██    ████  ██████
+██    ██    ████  ██    ██  ████  ██    ██  ██  ████  ████
+  ████████    ██  ██        ██  ██████████    ████  ██      ██  ██
+  ██    ██████    ████  ████  ████  ██    ██    ████  ████  ████
+      ██  ██  ██  ██    ██  ████          ██  ██  ██      ██████
+  ██████    ██  ██████  ██████    ██        ██████    ██  ████  ██
+  ██    ████    ██  ██████  ██  ████████  ██  ██    ██      ██  ██
+    ████    ████  ████      ████  ██      ████        ██  ██  ██
+          ██  ████    ██      ████  ██  ████████      ██  ████
+██        ████████      ██████    ██    ██  ████████  ████    ████
+██              ██  ████    ██  ██  ██████    ██      ██  ████  ██
+██  ██████  ██    ████  ████  ██████        ██  ██    ██  ██████
+██    ████        ██████              ██  ██        ██    ████████
+██  ██    ████████    ██████████  ████  ██      ██████████
+                ████  ██      ████  ████████  ████      ████
+██████████████  ██  ██      ████    ██  ████  ████  ██  ██  ████
+██          ██    ██    ██  ████    ██    ██  ████      ██████  ██
+██  ██████  ██  ████  ██████████  ██        ██  ██████████    ████
+██  ██████  ██  ██    ██            ██████████  ████    ██████
+██  ██████  ██  ██            ████████        ████████    ██████
+██          ██  ██  ██      ████    ██  ████████  ██    ██████
+██████████████  ██████████████  ████    ██  ████████  ██      ██
+                </pre>
+            </div>
+            <div id="status">
+                No file selected yet...
+            </div>
+            <div id="loader" class="loader">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="control-pannel">
+                <form>
+                    <input type = "file" name = "file-select" id = "file-select"/>
+                    <label for="file-select" class="file-button" id="upload-button">Select File</label>
+                    <input type = "button" id = "streaming" name="streaming"/>
+                    <label for="streaming" class="submit-button" id="streaming-button">Stream!</button>
+                </form>
+                
+            </div>
+            
+            
+        </div>
+        <div id="description">
+            <div id="TODO">
+                <b>Project Ophiuchus</b>
+                <div id="notification">*This is a transmitter demo page</div>
+                
+                <ul>
+                    <li>Design and develop by <a href="https://github.com/Dafeigy/Ophiuchus">@Dellyf!sh</a></li>
+                    <li>High performance & Fast response</li>
+                    <li>Ultra Low Speed: <a href="">7.6KB/s@10fps</a></li>
+                    <li><b>Non-Separation</b> of front-end and backend structure.</li>
+                </ul>
+                <div id="commercial">
+                    <pre id="welcome-page">
+_____             __                             __                         
+/\  __`\          /\ \       __                  /\ \                        
+\ \ \/\ \   _____ \ \ \___  /\_\   __  __    ___ \ \ \___    __  __    ____  
+ \ \ \ \ \ /\ '__`\\ \  _ `\\/\ \ /\ \/\ \  /'___\\ \  _ `\ /\ \/\ \  /',__\ 
+  \ \ \_\ \\ \ \L\ \\ \ \ \ \\ \ \\ \ \_\ \/\ \__/ \ \ \ \ \\ \ \_\ \/\__, `\
+   \ \_____\\ \ ,__/ \ \_\ \_\\ \_\\ \____/\ \____\ \ \_\ \_\\ \____/\/\____/
+    \/_____/ \ \ \/   \/_/\/_/ \/_/ \/___/  \/____/  \/_/\/_/ \/___/  \/___/ 
+              \ \_\                                                          
+               \/_/                                                          
+                    </pre>
+                                             
+                </div>
+                <div id="avatar">
+                    <b>Not Powered by </b>
+                    <a href="https://cn.vuejs.org/"><img src="https://pic.imgdb.cn/item/67373167d29ded1a8ca4b66b.png" alt=""></a>
+                    &nbsp+&nbsp
+                    <a href="https://fastapi.tiangolo.com/"><img src="https://pic.imgdb.cn/item/67372f44d29ded1a8ca27840.png" alt=""></a>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+</body>
+</html>
