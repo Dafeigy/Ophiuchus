@@ -3,23 +3,36 @@
     src: url('/static/fonts/DepartureMono-Regular.woff2') format('truetype');
 }
 
+@font-face {
+    font-family: 'moni';
+    src: url('/static/fonts/consola-1.ttf') format('woff');
+}
+
 * {
     padding: 0;
     margin: 0;
 }
 
-body{
-    background-color: #333;
-    font-family: "CustomFont";
-}
+
 @media screen and (orientation: landscape) {
+    body{
+        background-color: #333;
+        font-family: "CustomFont";
+        height: 100%;
+        width: 100%;
+    }
     #container{
         display: flex;
-        float: left;
-        width: 100%;
+
+        float: center;
+        width: calc(min(100%,160vmin));
         height: 100%;
         justify-content: center;
         justify-items: center;
+        justify-self: center;
+    }
+    #nav{
+        display: none;
     }
     
     #main{
@@ -39,8 +52,8 @@ body{
         letter-spacing: .02rem;
         display: flex;
         margin-top: 2vw;
-        width: 25vw;
-        height: 25vw;
+        width: 60vmin;
+        height: 60vmin;
         background-color: #444;
         align-items: center;
         border-radius: 1vw;
@@ -53,15 +66,35 @@ body{
     
     pre{
         display: flex;
-        width: 50vh;
+        width: 60vmin;
+        height: auto;
+
         justify-content: center;
         margin: 0;
-        font-size: 0.4em;
+        font-size: 1.2vmin;
         font-family: "Consolas",monospace;
         letter-spacing: 0.02em;
         user-select: none;
     }
-    
+
+    #status{
+        display: flex;
+        width: 60vmin;
+        height: 3vw;
+        background-color: #494b4b;
+        /* opacity: ; */
+        z-index: 2;
+        position:relative;
+        margin-top: .5vw;
+        font-size: calc(.8vw);
+        border-radius: .5vw;
+        align-items: center;
+        justify-content: center;
+        /* text-align: center; */
+        color: #afafaf;
+        align-content: center;
+    }
+
     
     #upload{
         width: 100%;
@@ -76,15 +109,13 @@ body{
     }
     
     #control-pannel{
+        font-size: 2vmin;
         margin-top: .5vw;
         display: flex;
-        /* background-color: #444; */
-        width: 25vw;
+        width: 60vmin;
         height: 2vw;
         justify-content: center;
         align-items: center;
-        /* border: none; */
-        /* border: #3a9a78 .05vw solid; */
         border-radius: 0.5vw;
     }
     form{
@@ -104,7 +135,6 @@ body{
         text-align: center;
         display: flex;
         /* border: 1px solid #343434; */
-        font-size: calc(.64vw);
         color: #afafaf;
         cursor: pointer;
         transition: all .2s linear;
@@ -133,8 +163,8 @@ body{
     #TODO{
         /* width: 25vw; */
         height: 25vw;
-        margin-top: 2vw;
-        font-size: calc(2.5vw);
+        /* margin-top: 2vw; */
+        font-size: calc(2vw);
         text-align: left;
         color: #959595;
         font-family: "CustomFont";
@@ -151,14 +181,7 @@ body{
         color: #343434;
     }
     
-    li{
-        font-size: .2vw;
-        letter-spacing: 0;
-        text-align: left;
-        margin-top: .5vw;
-        color: #797979;
-        List-style-type :none
-    }
+
     
     a {
         text-decoration: none;
@@ -173,21 +196,37 @@ body{
     ul{
         margin-top: 2vw;
     }
-    
+
+    li{
+        font-size: 1vw;
+        letter-spacing: 0;
+        text-align: left;
+        margin-top: .5vw;
+        color: #797979;
+        List-style-type :none
+    }
     #notification{
-    
         font-size: 1vw;
     }
     
     #commercial{
-        text-align: center;
-        /* width: 25vw; */
-        font-size: .4vw;
-        color: #a1a1a1;
+        text-align: left;
+        font-size: 1vw;
         margin-top: 1vw;
         align-content: center;
-        height: 6vw;
+        height: auto;
         /* background-color: #5c5c5c; */
+    }
+    #author{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #797979;
+    }
+    #author>img{
+        margin-top: 1vh;
+        width: 8vh;
+        height: 8vh;
     }
     
     #avatar{
@@ -201,9 +240,7 @@ body{
     }
     #avatar{
         font-size: .8vw;
-        /* background: #949494; */
         opacity: 0.6;
-        /* color: #fff; */
     }
     img{
         align-content: center;
@@ -225,23 +262,7 @@ body{
         color: #3e3e3e;
     }
     
-    #status{
-        display: flex;
-        width: 25vw;
-        height: 3vw;
-        background-color: #494b4b;
-        /* opacity: ; */
-        z-index: 2;
-        position:relative;
-        margin-top: .5vw;
-        font-size: calc(.6vw);
-        border-radius: .5vw;
-        align-items: center;
-        justify-content: center;
-        /* text-align: center; */
-        color: #afafaf;
-        align-content: center;
-    }
+
     
     
     .red{
@@ -260,7 +281,7 @@ body{
     }
     
     #welcome-page{
-        font-size: .6vw;
+        font-size: .8vw;
     }
     
     *::selection{
@@ -333,20 +354,53 @@ body{
     }
 }
 @media screen and (orientation: portrait) {
+    body{
+        background-color: #333;
+        font-family: "CustomFont";
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    body>div{
+        display: flex;
+    }
     #container{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         justify-self: center;
+        height: auto;
+        width: auto;
         /* background-color: #fff; */
-        height: 100vh;
-        width: 56.25vh;
     }
-    
+
+    #nav{
+        display: flex;
+        flex-direction: column;
+        margin-top: 4vh;
+        width: 70vmin;
+        height: auto;
+        align-items: center;
+    }
+    #mobile-logo{
+        color: #fff;
+        font-size: .8vh;
+        letter-spacing: .15rem;
+    }
+    #switch{
+        width: 70vmin;
+        height: auto;
+        background-color: #3a9a78;
+        color: #afafaf;
+        /* background-color: #ab3f3f; */
+        text-align: center;
+    }
     #main{
         width: 100%;
-        height: 70vh;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -354,12 +408,13 @@ body{
         color: #b1b1b1;
         /* background-color: #3a9a78; */
         font-size: 12px;
+        margin-top: 1vh;
     }
     
     #trans{
-        width: 70%;
-        height: 70%;
-        margin-top: calc(12vw + 8vh);
+        width: 70vmin;
+        height: 70vmin;
+        margin-top: 0;
         border-radius: 2vw;
         align-items: center;
         border: .4vw solid #444;
@@ -373,15 +428,15 @@ body{
         align-items: center;
         margin: 0;
         font-size: calc(0.6vh + 0.2vw);
-        font-family: "Consolas",monospace;
-        letter-spacing: 0;
+        font-family: "CustomFont";
+        letter-spacing: 0.05em;
         user-select: none;
     }
     #status{
-        width: 70%;
+        width: 70vw;
         height: 7vw;
         border-radius: .8vh;
-        margin-top: 2vh;
+        margin-top: 5%;
         font-size: 1.2vw;
         display: flex;
         background-color: #494b4b;
@@ -396,12 +451,11 @@ body{
     }
     
     #control-pannel{
-        width: 70%;
+        width: 70vw;
         height: 4vw;
         border-radius: 1vw;
         margin-top: 1vh;
         display: flex;
-        width: 70%;
         height: 7vw;
         justify-content: center;
         align-items: center;
@@ -443,12 +497,13 @@ body{
     }
     
     #description{
-        align-items: center;
+        display: flex;
         justify-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 70vh;
+        display: flex;
+        width: 70vmin;
+        height: auto;
         color: #959595;
+        margin-top: 2vh;
         /* background-color: salmon; */
     }
     a {
@@ -464,49 +519,75 @@ body{
     #TODO{
         display: flex;
         flex-direction: column;
-        /* justify-content: left; */
-        align-items: center;
-        /* align-self: center; */
+        align-items: left;
         height: 60vw;
-        margin-top: 5vw;
-        font-size: calc(4vh);
+        margin-top: 0;
+        font-size: calc(3vh);
+    }
+    #TODO>b{
+        display: none;
+    }
+    #notification{
+        font-size: 2.5vw;
+        float:left;
+        display: none;
     }
 
     #welcome-page{
-        margin-top: 8vh;
-        font-size: 1vh;
+        display: none;
+        /* margin-top: 3vh; */
+        font-size: 0.7vh;
+        /* font-size: 0.5vh; */
+        height: 0;
     }
     ul{
         display: flex;
+        /* background-color: #fff; */
         flex-direction: column;
         justify-content: center;
         align-items: left;
     }
     li{
-        font-size: 1.5vh;
-        margin-top: 2vw;
-    }
-    
-    #notification{
-        font-size: 2.5vw;
+        font-size: 1.4vh;
+        margin-top: 1.5vw;
+        /* margin-left: 12vw; */
+        list-style: none;
+        text-indent: 8%;
     }
     
     #commercial{
         font-size: 1vw;
-        height: 12vw;
-        margin-top: 2vw;
+        height: auto;
     }
-    
-    #avatar{
+
+    #author{
         display: flex;
-        font-size: 1vh;
-        margin-top: 15vh;
         justify-content: center;
         align-items: center;
-        align-content: left;
+    }
+    
+    #author>img{
+        margin-top: 1vh;
+        width: 8vh;
+        height: 8vh;
+    }
+
+    #author>p{
+        display: none;
+    }
+
+    #avatar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70vmin;
+        font-size: 1.2vh;
+        margin-top: 2vh;
         flex-direction: row;
         float: center;
+        /* background-color: #fff; */
     }
+    
 
     img{
         height: 3vw;
@@ -516,15 +597,17 @@ body{
 
     
     #loader{
-        width: 60vw;
-        height: 6vw;
-        margin-top: 2vw;
-        display: none;
+        /* margin-top: 2vw; */
+        height: 0;
+        width: 0;
+        display: flex;
+        
     }
     
     #loader span{
-        width: 1vw;
-        height: 5vh;
+        width: 0;
+        background-color: #fff;
+        height: 0;
         margin: 0 2vw;
     }
 }

@@ -64,13 +64,13 @@ $(document).ready(function() {
             success: function(response) {
                 console.log(file);
                 if (file.name.length > 10){
-                    filename = "..."+file.name.slice(-7)
+                    filename = "..."+file.name.slice(-10)
                 }
                 else{
                     filename = file.name
                 }
                 $('#status').html(
-                    `File: <span class="green">${filename}</span> Size: <span class="green">${file.size}</span> Bytes. ↓ Click <span class="green">[Stream!)</span> Button!`
+                    `<span class="green">${filename}</span> &nbspSize: <span class="green">${file.size}</span> &nbspBytes.`
                 );
                 if (file.size != 0){
                     streamingReadyFlag = true
