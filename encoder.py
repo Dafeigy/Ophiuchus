@@ -10,7 +10,7 @@ import qrcode
 import base64
 
 qr = qrcode.QRCode(
-    version=5,
+    version=3,
     error_correction=qrcode.constants.ERROR_CORRECT_L,
     box_size=1,
     border=0,
