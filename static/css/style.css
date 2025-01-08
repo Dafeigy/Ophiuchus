@@ -48,8 +48,8 @@
     
     #trans{
         color: #b1b1b1;
-        font-size: 24px;
-        letter-spacing: .02rem;
+        font-size: 1.2vmin;
+        letter-spacing: 0.02rem;
         display: flex;
         margin-top: 2vw;
         width: 60vmin;
@@ -61,22 +61,26 @@
         justify-content: center;
         flex-direction: column;
         transition: all .2s linear;
-        font-family: "Consolas", monospace
+        font-family: "Consolas", monospace;
+
     }
     
     pre{
         display: flex;
         width: 60vmin;
         height: auto;
-
+        align-items: center;
         justify-content: center;
         margin: 0;
-        font-size: 1.2vmin;
         font-family: "Consolas",monospace;
         letter-spacing: 0.02em;
         user-select: none;
     }
 
+    #trans>pre{
+        letter-spacing: 0.02rem;
+        font-size: 1.2vmin;
+    }
     #status{
         display: flex;
         width: 60vmin;
@@ -440,6 +444,10 @@
         font-size: 1.2vmin;
         font-family: "CustomFont";
         user-select: none;
+    }
+    #trans>pre{
+        letter-spacing: 0.02rem;
+        font-size: 1.2vmin;
     }
     #status{
         width: 70vw;

@@ -6,8 +6,10 @@ qr = qrcode.QRCode(
     border=0,
 )
 
-qr.add_data("Click Select File Button and then start streaming by Clicking Streaming Button")
+qr.add_data("Click Select File Button and then start streaming")
 qr_matrix = qr.get_matrix()
 matrix = [["██" if each else "  " for each in rows] for rows in qr_matrix]
-for row in matrix:
-    print("".join(row))
+with open ("Welcom.txt",'a',encoding="utf-8") as f:
+    for row in matrix:
+        print("".join(row))
+        f.writelines("<pre>"+"".join(row)+"</pre>"+'\n')

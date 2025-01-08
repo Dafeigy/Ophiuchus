@@ -11,9 +11,12 @@ function displayTransData(responseData){
 function displayData(responseData) {
     var transDiv = $('#trans');
     transDiv.empty(); // 清空 div 内容
+    // 自适应调节QRcode 大小
     len = responseData.data[0].length;
-    document.getElementById('trans').style.fontSize = 90/len + "vw"
-    document.getElementById('trans').style.letterSpacing = 0.015* 90/len + "vw"
+    // document.getElementById('trans').style.fontSize = 90/len + "vw"
+    document.getElementById('trans').style.fontSize = 1.2 + "vmin"
+    // document.getElementById('trans').style.letterSpacing = 0.015* 90/len + "vw"
+    document.getElementById('trans').style.letterSpacing = 0.02+'rem'
     // 遍历 data 字段中的每个元素，并按行添加到 div 中
     $.each(responseData.data, function(index, line) {
         transDiv.append('<pre>' + line + '</pre>');
