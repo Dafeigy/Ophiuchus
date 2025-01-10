@@ -38,7 +38,7 @@ function updateQRcode(){
     }
 }
 
-setInterval(updateQRcode, 1000)
+setInterval(updateQRcode, 40)
 
 $(document).ready(function() {
     $('#file-select').on('change', function() {

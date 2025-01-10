@@ -291,7 +291,7 @@
     }
     
     #welcome-page{
-        font-size: .8vw;
+        font-size: 1.2vmin;
     }
     
     *::selection{
